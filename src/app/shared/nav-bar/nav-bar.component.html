@@ -1,3 +1,145 @@
-<p>
-  nav-bar works!
-</p>
+<div class="main-wrap">
+  <div class="logo">
+    <img src="assets/img/logo.png" alt="">
+  </div>
+
+  <div class="list-item">
+   <div class="list-item-row" (click)="showDocList = !showDocList">
+    <div class="icon">
+      <img src="assets\img\list.png" alt="">
+    </div>
+    <div class="lable-wrap">
+      Document Automation
+    </div>
+    <div class="caret" [ngClass]="{'hide' : !showDocList}">
+      <img src="assets\img\down-arrow.png" alt="">
+    </div>
+   </div>
+    <div *ngIf="showDocList" class="dropdawn-list">
+      <div class="dropdawn-list-item active-tab">
+        Invoice
+      </div>
+      <div class="dropdawn-list-item">
+        Prepayment Invoice
+      </div>
+      <div class="dropdawn-list-item">
+        Pro Forma Invoice 
+      </div>
+      <div class="dropdawn-list-item">
+        Credit Note 
+      </div>
+      <div class="dropdawn-list-item">
+        Quote
+      </div>
+      <div class="dropdawn-list-item">
+        Purchasing Order
+      </div>
+    </div>
+  </div>
+
+  <div class="list-item">
+    <div class="list-item-row">
+      <div class="icon">
+        <img src="assets\img\payments.png" alt="">
+      </div>
+      <div class="lable-wrap">
+        Payments
+      </div>
+      <div class="caret">
+  
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="list-item">
+   <div class="list-item-row">
+    <div class="icon">
+      <img src="assets\img\network.png" alt="">
+    </div>
+    <div class="lable-wrap">
+      Network
+    </div>
+    <div class="caret">
+
+    </div>
+   </div>
+    
+  </div>
+
+  <div class="list-item">
+    <div class="list-item-row">
+      <div class="icon">
+        <img src="assets\img\find.png" alt="">
+      </div>
+      <div class="lable-wrap">
+        Fraud and Risk Model
+      </div>
+      <div class="caret">
+  
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="list-item">
+    <div class="list-item-row">
+      <div class="icon">
+        <img src="assets\img\cash.png" alt="">
+      </div>
+      <div class="lable-wrap">
+        Cash Flow
+      </div>
+      <div class="caret">
+  
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="list-item">
+    <div class="list-item-row">
+      <div class="icon">
+        <img src="assets\img\time.png" alt="">
+      </div>
+      <div class="lable-wrap">
+        Time Tracker
+      </div>
+      <div class="caret">
+  
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="list-item">
+   <div class="list-item-row">
+    <div class="icon">
+      <img src="assets\img\app.png" alt="">
+    </div>
+    <div class="lable-wrap">
+      App Integration
+    </div>
+    <div class="caret">
+
+    </div>
+   </div>
+    
+  </div>
+
+  <div class="list-item">
+    <div class="list-item-row">
+      <div class="icon">
+        <img src="assets\img\credit.png" alt="">
+      </div>
+      <div class="lable-wrap">
+        Credit
+      </div>
+      <div class="caret">
+
+      </div>
+    </div>
+    
+  </div>
+
+</div>
