@@ -1,5 +1,9 @@
+@import "../assets/sass/_mixins.sass"
+
 .main-wrap
     display: flex
 .content-right
-    width: 100%
-    
+    width: calc(100% - 320px)
+    // width: 100%
+    +screen-lt-md
+        width: 100%

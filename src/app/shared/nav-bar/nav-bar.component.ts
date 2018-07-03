@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.sass']
 })
 export class NavBarComponent implements OnInit {
- 
+  openMenu = true;
+  tab = '';
   constructor() { }
 
   ngOnInit() {

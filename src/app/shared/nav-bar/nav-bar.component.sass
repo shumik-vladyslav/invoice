@@ -1,14 +1,25 @@
+@import "../../../assets/sass/_variables.sass"
+@import "../../../assets/sass/_mixins.sass"
+
+.main-wrap-outer
+    position: relative
+    z-index: 1000
+    height: calc(100% - 70px)
+    +screen-lt-md
+        width: 0
 .main-wrap
     padding: 30px 35px 40px 40px
-    background: #e8e7ff
+    background: $gray-400
     width: 245px
-    min-height: 100vh
-    height: calc(100% - 70px)
+    height: 100%
+    transition: 0.2s
+    white-space: nowrap
+    overflow: hidden
     .logo
         text-align: center
         margin-bottom: 80px
     .list-item
-        margin-bottom: 20px
+        margin-bottom: 25px
         .list-item-row
             display: flex
             position: relative
@@ -17,22 +28,51 @@
             .icon
                 width: 20px
                 margin-right: 20px
+                font-size: $fs-23
+                display: flex
+                justify-content: center
+                align-items: center
             .lable-wrap
-                color: #211f49
+                color: $text-color-main
                 font-weight: 500
             .caret
                 position: absolute
                 right: 0
+                font-size: $fs-20
         .dropdawn-list
+            transition: all 0.2s
+            transition-delay: 0.2s
+            opacity: 0
+            max-height: 0px
+            overflow: hidden
             .dropdawn-list-item
-                color: #211f49
+                color: $text-color-main
                 font-weight: 500
                 margin-bottom: 12px
                 padding-left: 75px
-                font-size: 15px
+                font-size: $fs-15
                 margin-top: 12px
                 cursor: pointer
+.show-tab
+    opacity: 1 !important
+    max-height: 500px !important
+
 .active-tab
-    color: #8680ff !important
-.hide
-    display: none !important
+    color: $active-tab !important
+.menu-bar
+    position: absolute
+    top: 38px
+    right: -290px
+    cursor: pointer
+    font-size: 24px
+    transition: all 0.2s
+    +screen-gt-sm
+        display: none
+.bar-hide-menu
+    right: -60px
+.hide-menu
+    width: 0
+    box-sizing: border-box
+    padding: 0 !important
+    
+    

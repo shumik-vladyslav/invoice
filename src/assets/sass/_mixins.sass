@@ -1,0 +1,53 @@
+@mixin screen-xs
+  @media only screen and (max-width: 599px)
+    @content;
+
+@mixin screen-sm
+  @media only screen and (min-width: 600px) and (max-width: 959px)
+    @content;
+
+@mixin screen-md
+  @media only screen and (min-width: 960px) and (max-width: 1279px)
+    @content;
+
+@mixin screen-lg
+  @media only screen and (min-width: 1280px) and (max-width: 1919px)
+    @content;
+
+@mixin screen-xl
+  @media only screen and (min-width: 1920px) and (max-width: 5000px)
+    @content;
+
+
+@mixin screen-lt-sm
+  @media only screen and (max-width: 599px)
+    @content;
+
+@mixin screen-lt-md
+  @media only screen and (max-width: 959px)
+    @content;
+
+@mixin screen-lt-lg
+  @media only screen and (max-width: 1279px)
+    @content;
+
+@mixin screen-lt-xl
+  @media only screen and (max-width: 1919px)
+    @content;
+
+
+@mixin screen-gt-xs
+  @media only screen and (min-width: 600px)
+    @content;
+
+@mixin screen-gt-sm
+  @media only screen and (min-width: 960px)
+    @content;
+
+@mixin screen-gt-md
+  @media only screen and (min-width: 1280px)
+    @content;
+
+@mixin screen-gt-lg
+  @media only screen and (min-width: 1920px)
+    @content;

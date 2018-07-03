@@ -1,145 +1,170 @@
-<div class="main-wrap">
-  <div class="logo">
-    <img src="assets/img/logo.png" alt="">
-  </div>
-
-  <div class="list-item">
-   <div class="list-item-row" (click)="showDocList = !showDocList">
-    <div class="icon">
-      <img src="assets\img\list.png" alt="">
+<div class="main-wrap-outer">
+    <div class="menu-bar" (click)="openMenu = !openMenu" [ngClass]="{'bar-hide-menu' : !openMenu}">
+      <!-- <img src="assets\img\menu-symbol.png" alt=""> -->
+      <i class="fa-bars fa"></i>
     </div>
-    <div class="lable-wrap">
-      Document Automation
-    </div>
-    <div class="caret" [ngClass]="{'hide' : !showDocList}">
-      <img src="assets\img\down-arrow.png" alt="">
-    </div>
-   </div>
-    <div *ngIf="showDocList" class="dropdawn-list">
-      <div class="dropdawn-list-item active-tab">
-        Invoice
+    <div class="main-wrap" [ngClass]="{'hide-menu' : !openMenu}">
+      
+      <div class="logo">
+        <img src="assets/img/logo.png" alt="">
       </div>
-      <div class="dropdawn-list-item">
-        Prepayment Invoice
-      </div>
-      <div class="dropdawn-list-item">
-        Pro Forma Invoice 
-      </div>
-      <div class="dropdawn-list-item">
-        Credit Note 
-      </div>
-      <div class="dropdawn-list-item">
-        Quote
-      </div>
-      <div class="dropdawn-list-item">
-        Purchasing Order
-      </div>
-    </div>
-  </div>
-
-  <div class="list-item">
-    <div class="list-item-row">
-      <div class="icon">
-        <img src="assets\img\payments.png" alt="">
-      </div>
-      <div class="lable-wrap">
-        Payments
-      </div>
-      <div class="caret">
-  
-      </div>
-    </div>
     
-  </div>
-
-  <div class="list-item">
-   <div class="list-item-row">
-    <div class="icon">
-      <img src="assets\img\network.png" alt="">
-    </div>
-    <div class="lable-wrap">
-      Network
-    </div>
-    <div class="caret">
-
-    </div>
-   </div>
+      <div class="list-item">
+       <div class="list-item-row" (click)="tab === 'showDocAuto'?tab=null:tab = 'showDocAuto'">
+        <div class="icon">
+          <!-- <img src="assets\img\list.png" alt=""> -->
+          <i class="fa fa-file-text-o"></i>
+        </div>
+        <div class="lable-wrap">
+          Document Automation
+        </div>
+        <div class="caret" [ngClass]="{'hide' : tab != 'showDocAuto'}">
+          <i class=" fa-angle-down fa"></i>
+        </div>
+       </div>
+        <div class="dropdawn-list" [ngClass]="{'show-tab' : tab === 'showDocAuto'}">
+          <div class="dropdawn-list-item active-tab">
+            Invoice
+          </div>
+          <div class="dropdawn-list-item">
+            Prepayment Invoice
+          </div>
+          <div class="dropdawn-list-item">
+            Pro Forma Invoice 
+          </div>
+          <div class="dropdawn-list-item">
+            Credit Note 
+          </div>
+          <div class="dropdawn-list-item">
+            Quote
+          </div>
+          <div class="dropdawn-list-item">
+            Purchasing Order
+          </div>
+        </div>
+      </div>
     
-  </div>
-
-  <div class="list-item">
-    <div class="list-item-row">
-      <div class="icon">
-        <img src="assets\img\find.png" alt="">
+      <div class="list-item">
+        <div class="list-item-row" (click)="tab === 'showPayments'?tab=null:tab = 'showPayments'">
+          <div class="icon" [ngClass]="{'active-tab' : tab === 'showPayments'}">
+            <!-- <img src="assets\img\payments.png" alt=""> -->
+            <i class="fa fa-tag"></i>
+          </div>
+          <div class="lable-wrap" [ngClass]="{'active-tab' : tab === 'showPayments'}">
+            Payments
+          </div>
+          <div class="caret">
+            
+          </div>
+        </div>
+        
       </div>
-      <div class="lable-wrap">
-        Fraud and Risk Model
-      </div>
-      <div class="caret">
-  
-      </div>
-    </div>
     
-  </div>
-
-  <div class="list-item">
-    <div class="list-item-row">
-      <div class="icon">
-        <img src="assets\img\cash.png" alt="">
+      <div class="list-item">
+       <div class="list-item-row" (click)="tab === 'showNetwork'?tab=null:tab = 'showNetwork'">
+        <div class="icon">
+          <!-- <img src="assets\img\network.png" alt=""> -->
+          <i class=" fa-chain fa"></i>
+        </div>
+        <div class="lable-wrap">
+          Network
+        </div>
+        <div class="caret" [ngClass]="{'hide' : tab != 'showNetwork'}">
+          <i class=" fa-angle-down fa"></i>
+        </div>
+       </div>
+       <div class="dropdawn-list" [ngClass]="{'show-tab' : tab === 'showNetwork'}">
+          <div class="dropdawn-list-item active-tab">
+            Internal team
+          </div>
+          <div class="dropdawn-list-item">
+            Groups
+          </div>
+          <div class="dropdawn-list-item">
+            Calero Network 
+          </div>
+        </div>
       </div>
-      <div class="lable-wrap">
-        Cash Flow
-      </div>
-      <div class="caret">
-  
-      </div>
-    </div>
     
-  </div>
-
-  <div class="list-item">
-    <div class="list-item-row">
-      <div class="icon">
-        <img src="assets\img\time.png" alt="">
+      <div class="list-item">
+        <div class="list-item-row">
+          <div class="icon">
+            <!-- <img src="assets\img\find.png" alt=""> -->
+            <i class="fa fa-search-plus"></i>
+          </div>
+          <div class="lable-wrap">
+            Fraud and Risk Model
+          </div>
+          <div class="caret">
+      
+          </div>
+        </div>
+        
       </div>
-      <div class="lable-wrap">
-        Time Tracker
-      </div>
-      <div class="caret">
-  
-      </div>
-    </div>
     
-  </div>
-
-  <div class="list-item">
-   <div class="list-item-row">
-    <div class="icon">
-      <img src="assets\img\app.png" alt="">
-    </div>
-    <div class="lable-wrap">
-      App Integration
-    </div>
-    <div class="caret">
-
-    </div>
-   </div>
+      <div class="list-item">
+        <div class="list-item-row">
+          <div class="icon">
+            <!-- <img src="assets\img\cash.png" alt=""> -->
+            <i class="fa fa-money"></i>
+          </div>
+          <div class="lable-wrap">
+            Cash Flow
+          </div>
+          <div class="caret">
+      
+          </div>
+        </div>
+        
+      </div>
     
-  </div>
-
-  <div class="list-item">
-    <div class="list-item-row">
-      <div class="icon">
-        <img src="assets\img\credit.png" alt="">
+      <div class="list-item">
+        <div class="list-item-row">
+          <div class="icon">
+            <!-- <img src="assets\img\time.png" alt=""> -->
+            <i class=" fa-clock-o fa"></i>
+          </div>
+          <div class="lable-wrap">
+            Time Tracker
+          </div>
+          <div class="caret">
+      
+          </div>
+        </div>
+        
       </div>
-      <div class="lable-wrap">
-        Credit
-      </div>
-      <div class="caret">
-
-      </div>
-    </div>
     
-  </div>
-
+      <div class="list-item">
+       <div class="list-item-row">
+        <div class="icon">
+          <!-- <img src="assets\img\app.png" alt=""> -->
+          <i class="fa fa-tablet"></i>
+        </div>
+        <div class="lable-wrap">
+          App Integration
+        </div>
+        <div class="caret">
+    
+        </div>
+       </div>
+        
+      </div>
+    
+      <div class="list-item">
+        <div class="list-item-row">
+          <div class="icon">
+            <!-- <img src="assets\img\credit.png" alt=""> -->
+            <i class="fa  fa-pagelines "></i>
+          </div>
+          <div class="lable-wrap">
+            Credit
+          </div>
+          <div class="caret">
+    
+          </div>
+        </div>
+        
+      </div>
+    
+    </div>
 </div>
